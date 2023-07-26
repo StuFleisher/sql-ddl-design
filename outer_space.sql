@@ -34,18 +34,16 @@ INSERT INTO moons(name, planet)
     ('Phobos', 'Mars'),
     ('Deimos','Mars');
 
-SELECT name, star, COUNT(moon.name) as moon_count
-    FROM planets LEFT JOIN moons
-        ON planets.name=moons.planet;
-
-
-
-
-            SELECT COUNT(*)
-                FROM moons
-                GROUP BY planet
-            ON planets.name=moons.planet;
-
+SELECT * --planets.name, star, COUNT(*) as moon_count
+    FROM planets
+        LEFT JOIN moons
+           -- SELECT COUNT(*)
+             --   FROM moons
+               -- GROUP BY planet
+            ON planets.name=moons.planet
+    GROUP BY planets.name
+    --HAVING moons.name is not null;
+--add a group then count
 
 
 
